@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'USSD Support',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        fontFamily: 'RobotoSlab',
+        primarySwatch: Colors.brown,
+        scaffoldBackgroundColor: Color(0xFFF0E6D2),
       ),
       home: SupportPage(),
     );
@@ -36,20 +38,17 @@ class SupportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green.shade50,
-      appBar: AppBar(title: Text('Support Me')),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black26,
@@ -63,19 +62,20 @@ class SupportPage extends StatelessWidget {
                     Text(
                       "Support Me by Dialing USSD Code",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green.shade700),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF8B4513),
+                      ),
                     ),
                     SizedBox(height: 10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.phone_android, color: Colors.green.shade700),
-                        SizedBox(width: 8),
-                        Text(
-                          ussdCode,
-                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.brown),
-                        ),
-                      ],
+                    Text(
+                      ussdCode,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF8B4513),
+                      ),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -90,10 +90,10 @@ class SupportPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: _dialUSSD,
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                  backgroundColor: Colors.brown,
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  backgroundColor: Color(0xFF8B4513),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   elevation: 5,
                 ),
@@ -111,7 +111,7 @@ class SupportPage extends StatelessWidget {
                 padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(8),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black12,
@@ -123,7 +123,14 @@ class SupportPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("How it works:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.green.shade700)),
+                    Text(
+                      "How it works:",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF8B4513),
+                      ),
+                    ),
                     SizedBox(height: 8),
                     Text("1. Click the 'Support Me' button"),
                     Text("2. Your phone's dialer will open with the USSD code"),
